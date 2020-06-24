@@ -17,7 +17,7 @@ public class StackByLinkedList {
         if(isStackEmpty())
             list.createSinglyLinkedList(num);
         else
-            list.insertInLinkedList(num, 0);
+            list.insertInLinkedList(num, list.getSize());
     }
 
     int pop(){
@@ -25,8 +25,8 @@ public class StackByLinkedList {
         if(isStackEmpty())
             System.out.println("Stack underflow error!!");
         else {
-            topOfStack = list.getHead().getValue();
-            list.deletionOfNode(0);
+            topOfStack = list.getTail().getValue();
+            list.deletionOfNode(list.getSize());
         }
         return topOfStack;
     }
@@ -37,6 +37,6 @@ public class StackByLinkedList {
             return -1;
         }
         else
-            return list.getHead().getValue();
+            return list.getTail().getValue();
     }
 }
