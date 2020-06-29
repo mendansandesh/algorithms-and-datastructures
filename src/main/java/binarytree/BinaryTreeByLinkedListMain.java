@@ -15,22 +15,22 @@ public class BinaryTreeByLinkedListMain {
         root.right.left = new BinaryNode(15);
         root.right.right = new BinaryNode(8);
 
-        System.out.print( "\nInorder traversal before insertion:");
+        System.out.print( "\nInorder traversal before insertion: ");
         BinaryTreeByLinkedList.inorder(root);
 
         int key = 12;
         BinaryTreeByLinkedList.insert(root, key);
 
-        System.out.print("\nInorder traversal after insertion:");
+        System.out.print("\nInorder traversal after insertion: ");
         BinaryTreeByLinkedList.inorder(root);
 
-        System.out.print("\nPreorder traversal after insertion:");
+        System.out.print("\nPreorder traversal after insertion: ");
         BinaryTreeByLinkedList.preorder(root);
 
-        System.out.print("\nPostorder traversal after insertion:");
+        System.out.print("\nPostorder traversal after insertion: ");
         BinaryTreeByLinkedList.postorder(root);
 
-        System.out.print("\nLevelorder traversal after insertion:");
+        System.out.print("\nLevelorder traversal after insertion: ");
         BinaryTreeByLinkedList.levelorder(root);
 
         if(BinaryTreeByLinkedList.search(root, 15))
@@ -43,9 +43,9 @@ public class BinaryTreeByLinkedListMain {
         else
             System.out.println("Node 150 not found in tree");
 
-        /*BinaryTreeByLinkedList.deleteNodeOfBinaryTree(root, 10);
+        BinaryTreeByLinkedList.deleteNodeOfBinaryTree(root, 11);
 
-        System.out.print("\nLevelorder traversal after deletion:");
-        BinaryTreeByLinkedList.levelorder(root);*/
+        System.out.print("\nLevelorder traversal after deletion: ");
+        BinaryTreeByLinkedList.levelorder(root);
     }
 }

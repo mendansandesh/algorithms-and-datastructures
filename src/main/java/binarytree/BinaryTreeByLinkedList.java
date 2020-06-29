@@ -9,9 +9,8 @@ import java.util.Queue;
  * @author Sandesh Mendan on 28/06/20
  * @project algorithms-and-datastructures
  */
+
 public class BinaryTreeByLinkedList {
-    BinaryNode root;
-    BinaryNode temp = root;
 
     public static void insert(BinaryNode temp, int key){
         Queue<BinaryNode> queue = new LinkedList<>();
@@ -97,15 +96,16 @@ public class BinaryTreeByLinkedList {
     public static void deleteNodeOfBinaryTree(BinaryNode temp, int deleteValue) {
         if(temp == null)
             System.out.println("No tree exists, cant perform deletion");
+        BinaryNode root = temp;
         Queue<BinaryNode> queue = new LinkedList<>();
         queue.add(temp);
         while (!queue.isEmpty()){
             temp = queue.peek();
             queue.remove();
             if(temp.key == deleteValue) {
-                BinaryNode deepestNode = getDeepestNode(temp);
+                BinaryNode deepestNode = getDeepestNode(root);
+                deleteDeepestNode(root, deepestNode.key);
                 temp.key = deepestNode.key;
-                //deleteDeepestNode(); TODO delete deepestNode
                 return;
             }else {
                 if (temp.left != null)
@@ -119,7 +119,6 @@ public class BinaryTreeByLinkedList {
     public static BinaryNode getDeepestNode(BinaryNode temp) {
         Queue<BinaryNode> queue = new LinkedList<>();
         queue.add(temp);
-        BinaryNode deepestNodesParent;
         while (!queue.isEmpty()){
             temp = queue.peek();
             queue.remove();
@@ -130,5 +129,34 @@ public class BinaryTreeByLinkedList {
                 queue.add(temp.right);
         }
         return temp;
+    }
+
+    public static void deleteDeepestNode(BinaryNode temp, int deepestNodeKey){
+        Queue<BinaryNode> queue = new LinkedList<>();
+        queue.add(temp);
+
+        while (!queue.isEmpty()){
+            temp = queue.peek();
+            queue.remove();
+
+            if(temp.key == deepestNodeKey){
+                temp = null;
+                return;
+            }
+            if(temp.left != null){
+                if(temp.left.key == deepestNodeKey){
+                    temp.left = null;
+                    return;
+                }else
+                    queue.add(temp.left);
+            }
+            if(temp.right != null){
+                if(temp.right.key == deepestNodeKey){
+                    temp.right = null;
+                    return;
+                }else
+                    queue.add(temp.right);
+            }
+        }
     }
 }
