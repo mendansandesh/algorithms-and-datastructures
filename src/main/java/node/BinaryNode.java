@@ -8,12 +8,14 @@ public class BinaryNode {
     public int key;
     public BinaryNode left;
     public BinaryNode right;
+    public int height;
 
     // constructor
+    public BinaryNode(){}
+
     public BinaryNode(int key){
         this.key = key;
-        left = null;
-        right = null;
+        this.height = 1;
     }
 
     public int getKey() {
