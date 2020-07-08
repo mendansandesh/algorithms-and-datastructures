@@ -35,7 +35,7 @@ public class Dfs {
         while(!stack.isEmpty()){
             GraphNode topOfStack = stack.pop();
             if(!topOfStack.isVisited()){
-                System.out.println(topOfStack.getName() + " ");
+                System.out.print(topOfStack.getName() + " ");
                 topOfStack.setVisited(true);
                 for(GraphNode neighbor : topOfStack.getNeighbors())
                     if(!neighbor.isVisited())

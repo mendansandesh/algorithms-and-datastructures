@@ -8,7 +8,6 @@ import java.util.ArrayList;
  */
 public class GraphNode {
     String name;
-    int index;
     ArrayList<GraphNode> neighbors = new ArrayList<>();
     boolean isVisited = false;
     GraphNode parent;
@@ -22,14 +21,6 @@ public class GraphNode {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
     }
 
     public ArrayList<GraphNode> getNeighbors() {

@@ -35,7 +35,7 @@ public class Bfs {
         while (!queue.isEmpty()){
             GraphNode headOfQueue = queue.remove();
             if(!headOfQueue.isVisited()) {
-                System.out.println(headOfQueue.getName() + " ");
+                System.out.print(headOfQueue.getName() + " ");
                 headOfQueue.setVisited(true);
                 for (GraphNode neighbor : headOfQueue.getNeighbors())
                     if (!neighbor.isVisited())
