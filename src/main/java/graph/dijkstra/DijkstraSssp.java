@@ -1,6 +1,5 @@
 package graph.dijkstra;
 
-import node.GraphNode;
 import node.WeightedNode;
 
 import java.util.*;
@@ -33,18 +32,20 @@ public class DijkstraSssp {
 
     void dijkstra(WeightedNode node) {
         System.out.println("Source: " + node.getName());
-        node.setDistance(0);
+        node.setDistance(0);    //set source dist. to 0
         Queue<WeightedNode> minHeap = new PriorityQueue<>(distanceComparator);
-        minHeap.addAll(nodes);
+        minHeap.addAll(nodes); //push all nodes to minHeap (Note: other nodes dist is INT.MAX by default)
         while (!minHeap.isEmpty()){
-            WeightedNode topNode = minHeap.remove();
+            WeightedNode topNode = minHeap.remove();    //extract minHeap and update its neighbors dist. and parent
             for(WeightedNode neighbor : topNode.getNeighbors()){
-                int currentEdge = topNode.getWeightMap().get(neighbor);
-                if((topNode.getDistance() + currentEdge) < neighbor.getDistance()) {
-                    neighbor.setDistance(topNode.getDistance() + currentEdge);
-                    neighbor.setParent(topNode);
-                    minHeap.remove(neighbor);
-                    minHeap.add(neighbor);
+                if(minHeap.contains(neighbor)) {
+                    int currentEdge = topNode.getWeightMap().get(neighbor);
+                    if ((topNode.getDistance() + currentEdge) < neighbor.getDistance()) {
+                        neighbor.setDistance(topNode.getDistance() + currentEdge);  //update neighbor
+                        neighbor.setParent(topNode);
+                        minHeap.remove(neighbor);   //replace neighbor in minHeap
+                        minHeap.add(neighbor);
+                    }
                 }
             }
         }
