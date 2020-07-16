@@ -16,7 +16,7 @@ public class WeightedNode {
 
     public WeightedNode(String name) {
         this.name = name;
-        distance = Integer.MAX_VALUE;
+        distance = 99999;   //infinity
     }
 
     public String getName() {
