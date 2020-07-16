@@ -1,6 +1,6 @@
 package node;
 
-import graph.disjointset.DisjointSet;
+import graph.mcst.DisjointSet;
 
 import java.util.ArrayList;
 import java.util.HashMap;

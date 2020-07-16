@@ -1,4 +1,4 @@
-package graph.disjointset;
+package graph.mcst;
 
 import node.WeightedNode;
 
