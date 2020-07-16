@@ -37,6 +37,7 @@ public class DisjointSet {
             DisjointSet firstSet = firstNode.getSet();
             DisjointSet secondSet = secondNode.getSet();
 
+            //try to make least transfer while performing union; by making set with more nodes as destination set
             if(firstSet.getNodes().size() > secondSet.getNodes().size()){
                 firstSet.getNodes().addAll(secondSet.getNodes());
                 return firstSet;
@@ -62,7 +63,7 @@ public class DisjointSet {
         for (WeightedNode node : nodesList){
             DisjointSet set = new DisjointSet();
             set.getNodes().add(node);
-            node.setSet(set);
+            node.setSet(set);   //Storing the reference of this Disjoint set in Node class
         }
     }
 
