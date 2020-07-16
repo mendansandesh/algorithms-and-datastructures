@@ -1,5 +1,7 @@
 package node;
 
+import graph.disjointset.DisjointSet;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -13,6 +15,7 @@ public class WeightedNode {
     WeightedNode parent;
     int distance;
     HashMap<WeightedNode, Integer> weightMap = new HashMap<>();
+    private DisjointSet set;    //used in DisjointSet algorithm
 
     public WeightedNode(String name) {
         this.name = name;
@@ -57,5 +60,13 @@ public class WeightedNode {
 
     public void setWeightMap(HashMap<WeightedNode, Integer> weightMap) {
         this.weightMap = weightMap;
+    }
+
+    public DisjointSet getSet() {
+        return set;
+    }
+
+    public void setSet(DisjointSet set) {
+        this.set = set;
     }
 }
