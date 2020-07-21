@@ -3,6 +3,7 @@ package graph.mcst;
 import node.WeightedNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author Sandesh Mendan on 16/07/20
@@ -30,7 +31,7 @@ public class DisjointSet {
         }
     }
 
-    private static DisjointSet union(WeightedNode firstNode, WeightedNode secondNode) {
+    public static DisjointSet union(WeightedNode firstNode, WeightedNode secondNode) {
         if(firstNode.getSet().equals(secondNode.getSet()))
             return null;
         else {
@@ -40,15 +41,17 @@ public class DisjointSet {
             //try to make least transfer while performing union; by making set with more nodes as destination set
             if(firstSet.getNodes().size() > secondSet.getNodes().size()){
                 firstSet.getNodes().addAll(secondSet.getNodes());
+                secondNode.setSet(firstNode.getSet());  //TODO: reference handling need to be revisited;
                 return firstSet;
             }else {
                 secondSet.getNodes().addAll(firstSet.getNodes());
+                firstNode.setSet(secondNode.getSet());  //TODO: reference handling need to be revisited;
                 return secondSet;
             }
         }
     }
 
-    private static DisjointSet findSet(WeightedNode node) {
+    public static DisjointSet findSet(WeightedNode node) {
         return node.getSet();
     }
 
@@ -59,7 +62,7 @@ public class DisjointSet {
         System.out.println();
     }
 
-    private static void makeSet(ArrayList<WeightedNode> nodesList) {
+    public static void makeSet(ArrayList<WeightedNode> nodesList) {
         for (WeightedNode node : nodesList){
             DisjointSet set = new DisjointSet();
             set.getNodes().add(node);
