@@ -1,7 +1,10 @@
 package hackerrank;
 
 import java.util.Stack;
-
+/**
+ * @author Sandesh Mendan on 23/07/20
+ * @project algorithms-and-datastructures
+ */
 public class BalancedParanthesis {
     public static void main(String[] args){
         System.out.println(isBalanced("{[(])}"));
