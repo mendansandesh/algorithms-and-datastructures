@@ -6,7 +6,7 @@ import java.util.Stack;
  * @project algorithms-and-datastructures
  */
 
-//Problem: https://www.hackerrank.com/challenges/reverse-a-linked-list/problem
+//Problem: https://www.hackerrank.com/challenges/balanced-brackets/problem
 public class BalancedParanthesis {
     public static void main(String[] args){
         System.out.println(isBalanced("{[(])}"));
