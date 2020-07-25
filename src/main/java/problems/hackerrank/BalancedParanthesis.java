@@ -1,4 +1,4 @@
-package hackerrank;
+package problems.hackerrank;
 
 import java.util.Stack;
 /**
