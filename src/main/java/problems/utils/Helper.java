@@ -1,5 +1,7 @@
 package problems.utils;
 
+import java.util.List;
+
 /**
  * @author sandesh.mendan on 11/08/20
  * @project algorithms-and-datastructures
@@ -32,6 +34,11 @@ public class Helper {
         for(T a : arr)
             System.out.print(a + " ");
         System.out.println();
+    }
+
+    public static <T> void printArray(List<T> arr){
+        for(T a: arr)
+            System.out.print(a + " ");
     }
 
     public static void printArray(int[] arr){
