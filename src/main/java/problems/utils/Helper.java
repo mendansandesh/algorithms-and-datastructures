@@ -27,4 +27,16 @@ public class Helper {
         }
         return a;
     }
+
+    public static<T> void printArray(T[] arr){
+        for(T a : arr)
+            System.out.print(a + " ");
+        System.out.println();
+    }
+
+    public static void printArray(int[] arr){
+        for(int a : arr)
+            System.out.print(a + " ");
+        System.out.println();
+    }
 }
