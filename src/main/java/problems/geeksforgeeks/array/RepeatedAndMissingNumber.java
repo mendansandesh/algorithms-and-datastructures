@@ -1,4 +1,4 @@
-package problems.geeksforgeeks.string;
+package problems.geeksforgeeks.array;
 
 /**
  * @author sandesh.mendan on 14/08/20
