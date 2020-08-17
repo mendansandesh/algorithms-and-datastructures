@@ -23,7 +23,7 @@ public class SortColors {
         while (mid < high){
             switch (arr[mid]){
                 case 0 :
-                    swap(arr, low, mid);
+                    Helper.swap(arr, low, mid);
                     low++;
                     mid++;
                     break;
@@ -31,16 +31,11 @@ public class SortColors {
                     mid++;
                     break;
                 case 2:
-                    swap(arr, mid, high);
+                    Helper.swap(arr, mid, high);
                     high--;
                     break;
             }
         }
     }
-    public static int[] swap(int[] arr, int index1, int index2){
-        int temp = arr[index1];
-        arr[index1] = arr[index2];
-        arr[index2] = temp;
-        return arr;
-    }
+
 }
