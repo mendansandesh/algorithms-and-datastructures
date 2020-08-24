@@ -21,19 +21,19 @@ public class PascalTriangle {
     }
 
     private static List<List<Integer>> createPascalTriangle(int numRows) {
-        List<List<Integer>> result = new ArrayList<>(numRows);
+        List<List<Integer>> rows = new ArrayList<>(numRows);
         for(int i = 0; i < numRows; i++) {
-            List<Integer> rows = new ArrayList<>();
-            while (rows.size() < i + 1){
-                if(rows.isEmpty() || rows.size() == i)
-                    rows.add(1);
+            List<Integer> row = new ArrayList<>();
+            while (row.size() < i + 1){
+                if(row.isEmpty() || row.size() == i) //first and last elem in each row
+                    row.add(1);
                 else {
-                    int prevRows2NumSum = result.get(i - 1).get(rows.size()) + result.get(i - 1).get(rows.size() - 1);
-                    rows.add(prevRows2NumSum);
+                    int prevRows2NumSum = rows.get(i - 1).get(row.size()) + rows.get(i - 1).get(row.size() - 1);
+                    row.add(prevRows2NumSum);
                 }
             }
-            result.add(rows);
+            rows.add(row);
         }
-        return result;
+        return rows;
     }
 }
