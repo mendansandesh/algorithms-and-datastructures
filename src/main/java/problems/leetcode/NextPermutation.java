@@ -6,6 +6,9 @@ import problems.utils.Helper;
  * @author sandesh.mendan on 26/08/20
  * @project algorithms-and-datastructures
  */
+//Problem: https://leetcode.com/problems/next-permutation/
+// TimeComplexity:  O(N)
+// SpaceComplexity: O(1)
 public class NextPermutation {
     public static void main(String[] args) {
         int[] arr = {1, 3 , 2};
