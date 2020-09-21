@@ -10,7 +10,7 @@ package problems.divideNconquer;
 // SpaceComplexity:
 public class HouseThief {
     public static void main(String[] args) {
-        int[] houseNetWorth = new int[] {2,7,9,3,1}; //6, 7, 1, 30, 8, 2, 4
+        int[] houseNetWorth = new int[] {6, 7, 1, 3, 8, 2, 4};
         System.out.println(maxMoney(houseNetWorth));
     }
 
@@ -19,7 +19,7 @@ public class HouseThief {
     }
 
     private static int findMaxRecursive(int[] houseNetWorth, int index) {
-        if(index >= houseNetWorth.length-1)
+        if(index > houseNetWorth.length-1)
             return 0;
         int withCurrHouse = houseNetWorth[index] + findMaxRecursive(houseNetWorth, index+2);
         int withoutCurrHouse =  findMaxRecursive(houseNetWorth, index+1);
