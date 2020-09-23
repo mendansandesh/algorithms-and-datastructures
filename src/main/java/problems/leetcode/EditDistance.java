@@ -6,8 +6,9 @@ package problems.leetcode;
  */
 // Problem: https://leetcode.com/problems/edit-distance/
 // Level: Hard
-// TimeComplexity: O(m x n)
-// SpaceComplexity: O(m x n)
+// TimeComplexity: O(M x N)
+// SpaceComplexity: O(M x N)
+// Formula: if same char then dp[i-1][j-1], if different char then Min( dp[i][j-1], dp[i-1][j-1], dp[i-1][j] )
 public class EditDistance {
     public static void main(String[] args) {
         System.out.println(findMinOperations("table", "tbres"));
