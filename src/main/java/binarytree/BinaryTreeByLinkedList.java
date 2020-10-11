@@ -47,15 +47,15 @@ public class BinaryTreeByLinkedList {
         if(root == null)
             return;
         System.out.print(root.key + " ");
-        inorder(root.left);
-        inorder(root.right);
+        preorder(root.left);
+        preorder(root.right);
     }
 
     public static void postorder(BinaryNode root) {
         if(root == null)
             return;
-        inorder(root.left);
-        inorder(root.right);
+        postorder(root.left);
+        postorder(root.right);
         System.out.print(root.key + " ");
     }
 
