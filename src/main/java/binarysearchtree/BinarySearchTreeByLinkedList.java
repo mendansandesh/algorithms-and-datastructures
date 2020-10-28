@@ -15,12 +15,12 @@ public class BinarySearchTreeByLinkedList {
     }
 
     // Constructor
-    BinarySearchTreeByLinkedList() {
+    public BinarySearchTreeByLinkedList() {
         root = null;
     }
 
     // Insert values in BST
-    void insert(int value) {
+    public void insert(int value) {
         root = insert(root, value);
     }
 
@@ -37,7 +37,7 @@ public class BinarySearchTreeByLinkedList {
         }
     }
 
-    boolean search(int value) {
+    public boolean search(int value) {
        return search(root, value);
     }
 
