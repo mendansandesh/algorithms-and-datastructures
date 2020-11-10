@@ -16,7 +16,7 @@ public class Bfs {
         this.nodes = nodes;
     }
 
-    void addUndirectedEdge(int i, int j){
+    public void addUndirectedEdge(int i, int j){
         GraphNode nodeA = nodes.get(i - 1);
         GraphNode nodeB = nodes.get(j - 1);
         nodeA.getNeighbors().add(nodeB);
