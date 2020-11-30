@@ -17,7 +17,7 @@ Input: nums = [2,2,2,2,2]
 Output: 5
 Explanation: The length of longest continuous increasing subsequence is 1, and there are 5 subsequences' length is 1, so output 5.
  */
-public class Lis {
+public class LongestIncreasingSubsequence {
     public static void main(String[] args) {
         //int[] a = {5, 4, 7};
         int[] a = {1,3,5, 4, 7};
