@@ -15,6 +15,11 @@ public class BinaryTreeByLinkedListMain {
         root.right.left = new BinaryNode(15);
         root.right.right = new BinaryNode(8);
 
+        System.out.print( "\nHeight of the tree: " + BinaryTreeByLinkedList.heightOfBinaryTree(root));
+
+        System.out.print( "\nLevel at which node 11 present is: " + BinaryTreeByLinkedList.levelOfBinaryTree(root, 11, 1));
+        System.out.print( "\nLevel at which node 15 present is: " + BinaryTreeByLinkedList.levelOfBinaryTree(root, 15, 1));
+
         System.out.print( "\nInorder traversal before insertion: ");
         BinaryTreeByLinkedList.inorder(root);
 

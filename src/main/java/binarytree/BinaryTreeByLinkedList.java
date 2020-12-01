@@ -159,4 +159,28 @@ public class BinaryTreeByLinkedList {
             }
         }
     }
+
+    public static int levelOfBinaryTree(BinaryNode root, int data, int level){
+        if(root == null)
+            return 0;
+        if(root.key == data)
+            return level;
+        int downLevel = levelOfBinaryTree(root.left, data, level + 1);
+
+        if(downLevel != 0)
+            return downLevel;
+
+        downLevel = levelOfBinaryTree(root.right, data, level + 1);
+
+        return downLevel;
+    }
+
+    public static int heightOfBinaryTree(BinaryNode root){
+        if(root == null)
+            return 0;
+        int leftSubTreeHeight = heightOfBinaryTree(root.left);
+        int rightSubTreeHeight = heightOfBinaryTree(root.right);
+
+        return 1 + Math.max(leftSubTreeHeight, rightSubTreeHeight);
+    }
 }
