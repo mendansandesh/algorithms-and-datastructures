@@ -1,7 +1,7 @@
 package problems.leetcode;
 
 /**
- * @author sandesh.mendan on 30/11/20
+ * @author sandesh.mendan on 10/08/20
  * @project algorithms-and-datastructures
  */
 // Problem: https://leetcode.com/problems/find-the-duplicate-number/
@@ -9,8 +9,8 @@ package problems.leetcode;
 // Space: O(1)
 public class FirstDuplicate {
     public static void main(String[] args) {
-        int[] arr = {3,1,3,4,2};
-        System.out.println(firstDuplicate(arr));
+        int[] arr = {1, 3, 4, 2, 2};
+        System.out.println(getDuplicateNumber(arr));
     }
 
     private static int firstDuplicate(int[] arr) {
@@ -29,4 +29,18 @@ public class FirstDuplicate {
 
     //other ways to do using HashSet to check if number s already present
 
+    private static int getDuplicateNumber(int[] arr) {
+        int slow = arr[0];
+        int fast = arr[0];
+        do{
+            slow = arr[slow];
+            fast = arr[arr[fast]];
+        }while (slow != fast);
+        fast = arr[0];
+        while (slow != fast){
+            slow = arr[slow];
+            fast = arr[fast];
+        }
+        return slow;
+    }
 }
