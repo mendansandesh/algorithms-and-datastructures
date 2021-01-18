@@ -9,6 +9,7 @@ import java.util.List;
  * @project algorithms-and-datastructures
  */
 // Problem: https://www.geeksforgeeks.org/find-the-maximum-of-minimums-for-every-window-size-in-a-given-array/
+// other reference: https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
 public class MaxMinInSegment {
     public static void main(String[] args){
         int[] arr = {1, 1};
@@ -46,7 +47,7 @@ public class MaxMinInSegment {
                 queue.removeLast();
             queue.addLast(i);
         }
-        queue.addLast(arr[queue.peek()]);
+        minOfEachSegment.add(arr[queue.peek()]);
         int min = 0;
         for(Integer item : minOfEachSegment){
             if(item > min)
