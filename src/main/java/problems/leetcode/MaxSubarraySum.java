@@ -13,7 +13,17 @@ public class MaxSubarraySum {
         System.out.println(maxSubarraySum(arr));
     }
 
-    public static int maxSubarraySum(int[] nums) {
+    public static int maxSubarraySum(int[] arr) {
+        int maxEndingHere = arr[0];
+        int maxSoFar = arr[0];
+        for(int i = 1; i < arr.length; i++){
+            maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);
+            maxSoFar = Math.max(maxSoFar, maxEndingHere);
+        }
+        return maxSoFar;
+    }
+
+    public static int maxSubarraySum1(int[] nums) {
         //Kadane's algorithm
         int sum = 0;
         int maxSum = nums[0];   //initialize to first elem
