@@ -15,7 +15,7 @@ public class LowestCommonAncestorBinaryTree {
         tree.left.right.right = new BinaryNode(4);
         tree.right = new BinaryNode(1);
         tree.right.left = new BinaryNode(0);
-        tree.right.left = new BinaryNode(8);
+        tree.right.right = new BinaryNode(8);
 
         System.out.println(lowestCommonAncestor(tree, tree.left, tree.left.right.right).key);
     }
