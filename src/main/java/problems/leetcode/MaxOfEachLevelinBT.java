@@ -19,7 +19,7 @@ public class MaxOfEachLevelinBT {
     }
     public static List<Integer> largestValues(BinaryNode root){
         if(root == null) return null;
-        List<Integer> maxValues = new ArrayList<>();
+        List<Integer> maxValues = new ArrayList<>();//each index represents levelNum; and stores max elem at that level
         largestValues(root, maxValues, 0);
         return maxValues;
     }
