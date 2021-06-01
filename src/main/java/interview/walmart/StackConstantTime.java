@@ -96,9 +96,7 @@ class StackConstantTime {
     public int getMin(){
         return min;
     }*/
-}
 
-class Main{
     public static void main(String[] args){
         StackConstantTime s = new StackConstantTime();
         s.push(8);
