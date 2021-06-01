@@ -63,8 +63,8 @@ public class OpenTheLock {
 
     private static String anticlockwise(String str, int rotationIndex){
         char[] chars = str.toCharArray();
-        if(chars[rotationIndex] == '9')
-            chars[rotationIndex] = '0';
+        if(chars[rotationIndex] == '0')
+            chars[rotationIndex] = '9';
         else
             chars[rotationIndex] -= 1;
         return new String(chars);
