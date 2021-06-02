@@ -27,7 +27,6 @@ public class NonAdjacentSum {
         // the minimum element eligible for joining with a[i], i.e. from a[1 : i-2]
         int minElement = a[1];
 
-        int prevElement = a[2]; // a[i - 1]
         for (int i = 3; i+1 < a.length; i++) {
             int sum = minElement + a[i];
             if (sum < minSum) {
@@ -35,11 +34,6 @@ public class NonAdjacentSum {
                 minSumElement1 = minElement;
                 minSumElement2 = a[i];
             }
-
-            if (prevElement < minElement) {
-                minElement = prevElement;
-            }
-            prevElement = a[i];
         }
 
         return minSumElement1 + minSumElement2;
