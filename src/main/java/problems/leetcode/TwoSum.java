@@ -10,8 +10,6 @@ import java.util.Map;
  * @project algorithms-and-datastructures
  */
 //Problem: https://leetcode.com/problems/two-sum/
-// TimeComplexity:  O(N)
-// SpaceComplexity: O(N)
 public class TwoSum {
     public static void main(String[] args) {
         int[] arr = {-1, -2, -3, -4, -5};
