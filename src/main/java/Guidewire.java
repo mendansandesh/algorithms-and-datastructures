@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Guidewire {
@@ -15,7 +16,7 @@ public class Guidewire {
             return -1;
 
         // Sort by ascending starting point
-        Arrays.sort(intervals, (i1, i2) -> Integer.compare(i1[0], i2[0]));
+        Arrays.sort(intervals, Comparator.comparingInt(i -> i[0]));
 
         List<int[]> result = new ArrayList<>();
         int[] newInterval = intervals[0];
@@ -28,7 +29,7 @@ public class Guidewire {
                 result.add(newInterval);
             }
         }
-
+        result.add(newInterval); //bug fix
         return result.size();
     }
 
