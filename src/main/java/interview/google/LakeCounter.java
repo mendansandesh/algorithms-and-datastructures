@@ -1,4 +1,4 @@
-package google;
+package interview.google;
 
 import java.util.*;
 
